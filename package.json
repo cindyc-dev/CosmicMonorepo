@@ -1,0 +1,22 @@
+{
+  "name": "cosmicmonorepo",
+  "version": "1.0.0",
+  "description": "A Cosmic Monorepo with ReactJS, NodeJs, TypeScript and NPM Workspaces",
+  "author": "Xin Yu (Cindy)",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server",
+    "shared-types"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run workspace client dev\" \"npm run workspace server dev\"",
+    "build": "npm run workspace client build && npm run workspace server build"
+  },
+  "devDependencies": {
+    "concurrently": "^6.0.0"
+  },
+  "dependencies": {
+    "typescript": "^5.2.2"
+  }
+}
